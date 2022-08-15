@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Occasion index{% endblock %}
+
+{% block body %}
+    <h1>Occasion index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>ShortDesc</th>
+                <th>LongDesc</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>MaxParts</th>
+                <th>MinParts</th>
+                <th>Category</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for occasion in occasions %}
+            <tr>
+                <td>{{ occasion.id }}</td>
+                <td>{{ occasion.title }}</td>
+                <td>{{ occasion.shortDesc }}</td>
+                <td>{{ occasion.longDesc }}</td>
+                <td>{{ occasion.startDate ? occasion.startDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ occasion.endDate ? occasion.endDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ occasion.maxParts }}</td>
+                <td>{{ occasion.minParts }}</td>
+                <td>{{ occasion.category.name }}</td>
+                <td>
+                    <a href="{{ path('app_occasion_show', {'id': occasion.id}) }}">show</a>
+                    <a href="{{ path('app_occasion_edit', {'id': occasion.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_occasion_new') }}">Create new</a>
+{% endblock %}

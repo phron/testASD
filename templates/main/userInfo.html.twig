@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User Infos{% endblock %}
+
+{% block body %}
+
+
+<h1>Mes infos</h1>
+
+<div class="infos">
+    {{ app.User.email}}
+</div>
+
+<h2>Mon Profil</h2>
+{% include "profile/show.html.twig" %}
+  
+{% endblock %}

@@ -1,0 +1,12 @@
+<div class="nav">
+   
+    
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{path('account')}}" class="button">Mon compte</a>
+    {% else %}
+        <a class="button" href="{{path('login')}}">Login</a>
+        <a class="button" href="{{path('register')}}">Register</a>
+    
+    {% endif %}
+    
+</div>

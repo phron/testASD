@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Bondi Sans DEMO Rough';
+    src: url('/public/assets/fonts/Bondi\ Sans\ DEMO\ Rough\ Regular.ttf') format('truetype');
+}
+
+.titre{
+    visibility: hidden;
+    font-family: 'Bondi Sans DEMO Rough' ;
+    font-size: 3rem;
+    color:blueviolet;
+}   
